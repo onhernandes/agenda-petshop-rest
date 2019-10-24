@@ -1,0 +1,9 @@
+{
+  "mysql": {
+    "user": "root",
+    "port": 3306,
+    "host": "localhost",
+    "password": "",
+    "database": "agenda-petshop"
+  }
+}
