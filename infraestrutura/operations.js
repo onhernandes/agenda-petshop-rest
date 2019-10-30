@@ -15,7 +15,6 @@ class Operations {
 
   adiciona(res, item) {
     cruds[this._entidade].adiciona(res, item)
-
   }
 
   atualiza(res, novoItem, id) {
@@ -24,6 +23,10 @@ class Operations {
 
   deleta(res, id) {
     cruds[this._entidade].deleta(res, id)
+  }
+
+  adicionaVarios(res, item) {
+    cruds[this._entidade].adicionaVarios(res, item)
   }
 }
 

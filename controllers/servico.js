@@ -3,6 +3,10 @@ const Operations = require('../infraestrutura/operations')
 const Servicos = new Operations('servico')
 
 module.exports = app => {
+  app.post('/servicos-teste', (req, res) => {
+    Servicos.adicionaVarios(res, req.body)
+  })
+
   app.get('/servicos', (req, res) => {
     Servicos.lista(res)
   })
