@@ -7,6 +7,10 @@ module.exports = app => {
     Servicos.adicionaVarios(res, req.body)
   })
 
+  app.get('/health', (req, res) => {
+    res.json({ ok: true })
+  })
+
   app.get('/servicos', (req, res) => {
     Servicos.lista(res)
   })
