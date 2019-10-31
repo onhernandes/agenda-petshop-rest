@@ -1,0 +1,30 @@
+version: "3.7"
+services:
+  client:
+    build: .
+    command: ["npm", "start"]
+    environment:
+      - NODE_ENV=production
+    ports:
+      - "4000:4000"
+    restart: unless-stopped
+    networks:
+      - app-network
+
+  mariadb:
+    image: mariadb/server:10.3
+    environment:
+      - MARIADB_ROOT_PASSWORD=
+      - MARIADB_PASSWORD=
+      - MARIADB_USER=
+      - MARIADB_DATABASE=
+    ports:
+      - "3306:3306"
+    networks:
+      - app-network
+    volumes:
+      - ./mariadb-data:/var/lib/mysql
+
+networks:
+  app-network:
+    driver: bridge
